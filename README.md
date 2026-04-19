@@ -1,41 +1,158 @@
- Climate Saathi: Early Warning Platform for Climate Resilience
+# 🌍 Climate Saathi  
+**Climate-Resilient Schools & Health Centres Platform (IoT + AI)**  
 
-Climate Saathi is a modular, cloud-backed IoT and Machine Learning platform designed to monitor, predict, and issue early warnings for climate-related service disruptions at government schools and Primary Health Centres (PHCs): 69]. _start]The platform transforms reactive crisis management into proactive resilience by generating real-time risk scores, digital twins, and multi-channel early warnings: 6, 62].
-
-## Problem Statement
-India ranks 26th on UNICEF's Children's Climate Risk Index (extremely high risk) due to compound threats like water scarcity, floods, and heatwaves. These threats cause frequent disruptions in public infrastructure, such as pump failures, contaminated water, and heat-related cold-chain breaks, which harm communities without prior warning.
-
-## Key Features
-* **7–14 Days Predictive Horizon:** Anticipates water shortages, sanitation overflows, and power failures up to two weeks in advance: 2, 72].
-* **Facility Digital Twin:** Provides a live, queryable UI with sensor widgets, 14-day prediction overlays, alert logs, and scenario simulations: 34].
-* **Multi-Hazard Coverage:** Monitors water, sanitation, energy, heatwave, flood, and cold-chain risks within a single unified platform: 60].
-* **Explainable AI:** Incorporates SHAP-based explanations for model outputs to ensure field officials understand the driving factors behind risk scores: 75].
-* **Multi-Channel Alerts:** Delivers automated, deduplicated early warnings via SMS, WhatsApp, In-App push, and localized IVR: 31, 151, 158].
-
-## Technical Architecture
-The system is built on a tightly integrated five-layer architecture: 81]:
-1. **Edge / Ingestion:** Uses solar-charged ESP32 sensor nodes connected via LoRaWAN (The Things Stack/ChirpStack) or Bluetooth fallback: 83, 88].
-2. **Data Store:** Utilizes TimescaleDB for time-series sensor data and PostgreSQL for facility master data, configurations, and metadata: 83].
-3. **Analytics:** Orchestrates daily/hourly ETL pipelines using Apache Airflow to ingest external data from IMD, NASA POWER, NASA FIRMS, and CGWB: 83, 112].
-4.**Application:** Features FastAPI-based microservices for risk scoring, forecasting, anomaly detection, and a Digital Twin Engine: 83].
-5.**Presentation:** A React/Vite web application for state/district dashboards and a Streamlit app for the prototype: 83, 162].
-
-## Predictive Engine (Machine Learning)
-* **Multi-Label Risk Scorer (LightGBM):** Predicts simultaneous binary risk labels (water, sanitation, energy, disease) per facility over a 7–14 day horizon: 122, 123].
-* **Water Level Forecaster (PyTorch LSTM):** Forecasts tank and groundwater levels 14 days ahead, producing continuous trajectories.
-* **PV Output Anomaly Detector:** Identifies solar under-performance by comparing expected output (calculated via a single-diode physics model) against actual sensor data.
-
-## Impact Targets
-* [_start]Achieve a >90% target alert specificity[: 2].
-* [_start]Reduce unplanned service disruptions by 40%[: 11].
-* _start]Provide 48+ hours of advance warning for critical water issues: 54].
+> Predict → Prevent → Protect  
+> Turning climate risk into actionable intelligence for schools & PHCs
 
 ---
 
-**Climate Saathi - IoT & AI Early Warning Platform**
-*Mar 2026 – Apr 2026*
-* _start]Engineered a cloud-backed IoT and Machine Learning platform integrating hardware sensor data with open climate datasets (IMD, NASA POWER) to predict service disruptions at schools and health centres: 6, 69].
-* _start]Developed a 3-tier predictive engine featuring a LightGBM Multi-Label Risk Scorer, a PyTorch LSTM Water Level Forecaster, and a physics-informed PV Anomaly Detector to generate a 7–14 day early warning horizon: 122, 131, 134].
-* _start]Architected an automated data pipeline using Apache Airflow to orchestrate ETL tasks, processing APIs and MQTT streams into a TimescaleDB time-series and PostgreSQL relational database: 102, 105, 112].
-* _start]Built an interactive Streamlit digital twin dashboard featuring interactive maps, 14-day forecast charts, SHAP-based model explainability, and multi-channel simulated alert queues (SMS/IVR): 47, 189, 190].
-* _start]Implemented deterministic 3-level decision fusion logic combining sensor streams, domain features, and external hazard layers to suppress false positives and target >90% alert specificity: 2, 139, 141].
+## 🚀 Overview
+
+Climate Saathi is a full-stack climate resilience monitoring and early warning platform designed for government schools, PHCs, CHCs, and Anganwadis.
+
+It combines:
+- IoT sensor networks  
+- Machine learning risk prediction  
+- Satellite + climate data  
+- Operational dashboards  
+- Multi-channel alerting  
+
+The goal:
+Detect climate-driven failures **before they happen** and enable proactive action.
+
+---
+
+## 🎯 Problem Statement
+
+Across regions like Chhattisgarh:
+
+- Water systems fail silently  
+- Solar infrastructure underperforms  
+- Heat impacts vaccine storage  
+- Sanitation issues disrupt schools  
+
+These failures are:
+- Reactive  
+- Unmonitored  
+- Discovered too late  
+
+Climate Saathi creates a **predictive intelligence layer over infrastructure**.
+
+---
+
+## 💡 Solution
+
+Climate Saathi is a **3-layer intelligent system**:
+
+### 1. Data Layer (IoT + External APIs)
+- ESP32 sensor nodes (water, energy, temperature, etc.)
+- IMD weather data
+- NASA POWER climate data
+- CGWB groundwater datasets
+
+### 2. AI/ML Layer
+- Multi-label risk scoring (water, sanitation, energy, disease)
+- 14-day forecasting (LSTM)
+- PV anomaly detection (physics-based)
+- SHAP explainability
+
+### 3. Decision Layer
+- Smart alerts (SMS, WhatsApp, IVR)
+- Risk dashboards
+- Facility digital twins
+- Chatbot interface
+
+---
+
+## 🧠 Key Capabilities
+
+- Real-time facility monitoring  
+- Predictive risk scoring (7–14 days)  
+- Explainable AI (SHAP insights)  
+- District & facility-level dashboards  
+- Automated alert escalation  
+- Multilingual support (English, Hindi, Chhattisgarhi)  
+- AI chatbot for querying data  
+
+---
+
+## 🏗️ System Architecture
+
+Climate Saathi follows a 5-layer architecture:
+
+1. Edge Layer – Sensors (ESP32 + LoRaWAN)  
+2. Data Layer – TimescaleDB + PostgreSQL  
+3. Analytics Layer – Feature engineering + ML pipelines  
+4. Application Layer – APIs, alert engine, digital twin  
+5. Presentation Layer – Dashboard, chatbot, mobile app  
+
+---
+
+## 🔬 Machine Learning Models
+
+### Risk Scorer (LightGBM)
+Predicts:
+- Water risk  
+- Sanitation risk  
+- Energy risk  
+- Disease risk  
+
+### Water Forecasting (LSTM)
+- 14-day prediction of water levels  
+- Used for “days-to-critical” alerts  
+
+### PV Anomaly Detection
+- Physics-based model using irradiance + temperature  
+- Detects solar inefficiency & faults  
+
+### Fusion Engine
+- Combines all models + sensor + climate data  
+- Reduces false alerts  
+
+---
+
+## 🧩 Tech Stack
+
+### Frontend
+- Next.js 16, React 19, TypeScript  
+- Tailwind CSS, shadcn/ui, Framer Motion  
+- Mapbox / Leaflet, Recharts  
+
+### Backend
+- tRPC, Prisma, PostgreSQL  
+- Redis, Supabase  
+- FastAPI (ML services)  
+
+### ML & Data
+- Python, PyTorch, LightGBM  
+- SHAP (Explainability)  
+- Airflow (ETL pipelines)  
+
+### Infra
+- Docker + Kubernetes  
+- TimescaleDB (time-series)  
+- Kafka / MQTT  
+- AWS / GCP  
+
+---
+
+## 📁 Project Structure
+
+app/            → Frontend routes & UI  
+components/     → Reusable UI components  
+server/         → Backend logic (tRPC)  
+lib/            → Utilities, auth, helpers  
+ml/             → ML API + models  
+scripts/        → Data seeding & preprocessing  
+prisma/         → Database schema  
+data/           → Climate datasets  
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1. Install & Run
+
+```bash
+npm install
+npm run dev
