@@ -1,10 +1,11 @@
 # 🌍 Climate Saathi  
 **Climate-Resilient Schools & Health Centres Platform (IoT + AI)** 
-**[🌐 Live Demo](https://climate-saathi-2.vercel.app/)**
+
 
 > Predict → Prevent → Protect  
 > Turning climate risk into actionable intelligence for schools & PHCs
 
+**🔗 [Live Demo](https://climate-saathi-2.vercel.app/)**
 ---
 ## 🚀 Overview
 
