@@ -1,11 +1,10 @@
 # 🌍 Climate Saathi  
-**Climate-Resilient Schools & Health Centres Platform (IoT + AI)**  
+**Climate-Resilient Schools & Health Centres Platform (IoT + AI)** **[🌐 Live Demo](https://climate-saathi-2.vercel.app/)**
 
 > Predict → Prevent → Protect  
 > Turning climate risk into actionable intelligence for schools & PHCs
 
 ---
-
 ## 🚀 Overview
 
 Climate Saathi is a full-stack climate resilience monitoring and early warning platform designed for government schools, PHCs, CHCs, and Anganwadis.
